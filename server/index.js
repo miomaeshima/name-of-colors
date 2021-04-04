@@ -5,11 +5,13 @@ const cors = require ("cors");
 const path = require("path");
 const japaneseColorNames = require("./japanese-color-names.js")
 
-
 app.use(cors());
 app.use(express.json());
 
-
+app.get("/color/:rgb", (req, res)=>{
+    console.log(req.params.rgb);
+    res.send("hello")
+})
 
 
 app.listen(PORT, ()=>{
