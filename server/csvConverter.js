@@ -21,3 +21,22 @@ let csvStream = fastcsv
   })
 
 stream.pipe(csvStream);
+
+let stream = fs.createReadStream("sample-color-names.csv");
+let csvData = [];
+let csvStream = fastcsv
+  .parse()
+  //.on("data"～は一行入ってくるたびに、という意味。一行入ってくるたびにpushする。
+  .on("data", function (data) {
+    let object = {name:data[0], r:Number.parseInt(data[1]), g:Number.parseInt(data[2]), b:Number.parseInt(data[3])};
+    csvData.push(object);  
+  })
+  //.on("end"～で、endというのは各行の処理が終わってしまったら、という意味。そうしたらdbとつないで処理する。
+  .on("end", function () {
+    fs.writeFile("./sample-color-names.js", JSON.stringify(csvData), function(err){
+      if (err) throw err;
+      console.log("done!");
+    })
+  })
+
+stream.pipe(csvStream);

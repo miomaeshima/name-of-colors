@@ -1,11 +1,11 @@
 import './App.css';
-import Button from "./components/Button"
+import Button from "./components/Button.js"
 
 function App() {
   return (
     <div className="App">
-    Konnnichiwa!!     
-       {/* <Button />   */}
+    <p>Konnnichiwa!!</p>     
+       <Button />  
      
     </div>
   );
