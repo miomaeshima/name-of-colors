@@ -13,7 +13,7 @@ app.use(express.json());
 //function to make an array of objects {name, r, g, b} into objects {name, distance}
 const getDistance = (array, re, gr, bl) => array.map(color=>{
     let distance = Math.sqrt((color.r-re)**2 + (color.g-gr)**2 + (color.b-bl)**2);
-    return {name: color.name, distance: distance}
+    return {...color, distance: distance}
 })
 
 //function to return color that has smallest distance 
@@ -33,10 +33,10 @@ app.get("/color/:rgb", (req, res)=>{
    let arrayOfDistance = getDistance(japaneseColorNames, value.r, value.g, value.b) 
    console.log(arrayOfDistance.length)
 
-    let name = findClosest(arrayOfDistance);
-    console.log(name)
+    let chosenColor = findClosest(arrayOfDistance);
+    console.log(chosenColor)
 
-   res.send(JSON.stringify(name))
+   res.send(JSON.stringify(chosenColor))
 })
 
 app.listen(PORT, ()=>{
