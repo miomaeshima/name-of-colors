@@ -1,22 +1,39 @@
 import {Link} from "react-router-dom";
 import "./Home.css";
 import stones from "../images/stones.jpg";
+import ColorThief from "colorthief";
+const colorThief = new ColorThief();
 
-function Button() {
-  let rgb = { r: 225, g: 169, b: 171 };
-  let myRgb = JSON.stringify(rgb);
-  const sendRgb = (e) => {
-    e.preventDefault();
-    try {
-      fetch(`http://localhost:5000/color/${myRgb}`)
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-        });
-    } catch (err) {
-      console.log("error!");
+function Home() {
+
+  //function to send rgb value to get the name of closest color from server
+const getName = (rgbValue) =>{    
+  try {
+    fetch(`http://localhost:5000/color/${rgbValue}`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  } catch (err) {
+    console.log("error!");
+  }
+};
+
+  //function to get the dominant rgb value of an image and then get the name of closest color
+  //using the function above
+  let getRgb = (e) => {
+    let result;
+    let pic = e.target;
+    if (pic.complete){
+      result = colorThief.getColor(pic);
     }
-  };
+    let rgb = {r: result[0], g: result[1], b: result[2]};
+    console.log(rgb)
+    let rgbToBeSent = JSON.stringify(rgb);
+    
+    getName(rgbToBeSent)
+  }
+
   return (
     <div id="container">
       <div>
@@ -27,10 +44,10 @@ function Button() {
           
           
         </div>
-        <div id="photoContainer"><img class="sampleimage" alt="beige stone pebbles" onClick={sendRgb} src={stones}/></div>
+        <div id="photoContainer"><img className="sampleimage" alt="beige stone pebbles" onClick={getRgb} src={stones}/></div>
       </div>
     </div>
   );
 }
 
-export default Button;
+export default Home;
