@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./SelectFile.css";
+import { getRgb} from "../utility.js";
 
 function SelectFile() {
   const [unselected, setUnselected] = useState(true);
   const [previewPic, setPreviewPic] = useState(null);
+  const [picSrc, setPicSrc] = useState(null);
+  const [picName, setPicName] = useState("");
 
   const preview = (e) => {
     e.preventDefault();
@@ -11,14 +14,21 @@ function SelectFile() {
     setPreviewPic(e.target.files[0]);
   };
 
-  console.log(previewPic);
   if (unselected === false) {
-    console.log("false");
-    let hi2 = document.getElementById("hi2")
-    
-    console.log(hi2)
+    let reader = new FileReader();
+    reader.readAsDataURL(previewPic);
+
+    reader.onload = function () {
+      setPicSrc(reader.result);
+      setPicName(previewPic.name);
+    };
   }
 
+  const getColor = async (e) => {    
+  let color = await getRgb(e);
+  console.log(color)
+  }  
+    
   return (
     <div>
       {unselected ? (
@@ -34,7 +44,15 @@ function SelectFile() {
           ></input>
         </form>
       ) : (
-        <div id="hi2"></div>
+        <div id="previewContainer">
+          <img
+            id="chosenPic"
+            style={{ background: "grey" }}
+            alt={picName}
+            src={picSrc}
+             onClick={getColor}
+          />
+        </div>
       )}
     </div>
   );

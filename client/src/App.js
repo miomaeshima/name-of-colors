@@ -1,7 +1,7 @@
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home.js";
-import SelectFile from "./components/SelectFile.js";
+import SelectFile from "./components/Selectfile/SelectFile.js";
 
 
 function App() {
