@@ -7,6 +7,7 @@ function SelectFile() {
   const [previewPic, setPreviewPic] = useState(null);
   const [picSrc, setPicSrc] = useState(null);
   const [picName, setPicName] = useState("");
+  const [color, setColor] = useState({});
 
   const preview = (e) => {
     e.preventDefault();
@@ -25,12 +26,13 @@ function SelectFile() {
   }
 
   const getColor = async (e) => {    
-  let color = await getRgb(e);
-  console.log(color)
+  let data = await getRgb(e);
+  setColor(data)
   }  
     
   return (
     <div>
+    <a name="selectyourfile">
       {unselected ? (
         <form>
           <label id="labelforselectfile" htmlFor="selectfile">
@@ -52,8 +54,10 @@ function SelectFile() {
             src={picSrc}
              onClick={getColor}
           />
+          <div id="colorContainer" style={{background:`rgb(${color.r}, ${color.g}, ${color.b})`}}>{color.name}</div>
         </div>
       )}
+      </a>
     </div>
   );
 }
