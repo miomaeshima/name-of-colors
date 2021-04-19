@@ -10,6 +10,10 @@ const japaneseColorNames = require("./japanese-color-names.js")
 app.use(cors());
 app.use(express.json());
 
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname, "client/build")));
+}
+
 //function to make an array of objects {name, r, g, b} into objects {name, distance}
 const getDistance = (array, re, gr, bl) => array.map(color=>{
     let distance = Math.sqrt((color.r-re)**2 + (color.g-gr)**2 + (color.b-bl)**2);

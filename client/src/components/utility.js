@@ -2,7 +2,7 @@ import ColorThief from "colorthief";
 const colorThief = new ColorThief();
 
 const getName = async (rgbValue) =>{
-  let res =  await fetch(`http://localhost:5000/color/${rgbValue}`)
+  let res =  await fetch(`/color/${rgbValue}`)
   const color = await res.json();
   return color
 }
