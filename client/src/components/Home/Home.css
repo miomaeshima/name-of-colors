@@ -21,7 +21,7 @@
     font-size: 0.7em;
 }
 .sampleimage{
-    height: 105vh;
+    width: 50%;
     transform: rotate(90deg);
 
 }
