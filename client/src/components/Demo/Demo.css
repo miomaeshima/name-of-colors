@@ -1,19 +1,45 @@
+#demoContainer{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    background: lightgoldenrodyellow;
+}
 #photoContainer {
+  margin-top: 5vw;
   position: relative;
+  width: 50vw ;
 }
 
 #sampleImage {
-  width: 50%;
+  width: 86%;
+  position: abosolute;
+  top: 0;
+  left: 0;
   transform: rotate(90deg);
   scroll-behavior: smooth;
 }
 #demoText {
-  width: 45%;
-  font-size: 2em;
+  width: 80%;
+  font-size: 1.7em;
+  letter-spacing: 0.05em;
   color: white;
   position: absolute;
-  top: 24%;
-  left: 4%;
   font-weight: bold;
+  top: 20%;
+  left: 5%; 
   letter-spacing: 0.07em;
+}
+
+#demoNameBox{
+    width: 50vw;
+    font-size: 50px;
+    font-family: SimSun, Mincho;
+    display: flex;
+    font-size: 50px;
+    writing-mode: vertical-rl;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+ 
 }
