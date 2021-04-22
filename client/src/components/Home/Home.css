@@ -1,27 +1,75 @@
-#container{
-    background-color:beige;
-    display:flex;
-    flex-direction:column;
+#container {
+  background-color: beige;
+  display: flex;
+  flex-direction: column;
 }
-#title{
-    margin: 5vh;
-    font-size: 7vw;
+
+#title {
+  font-size: 7vw;
+  font-family: SimSun, Mincho;
+  padding: 10vh;
+  color: darkslategray;
+
+  display: flex;
+  align-items: center;
+  height: 20vh;
 }
-#description{
-    margin-top: 5vh;
-    margin-left: 5vh;
-    margin-right: 10vh;
-    font-size: 3vh;
+#description {
+  padding-left: 10vh;
+  font-size: 17px;
+  font-weight: bold;
+  font-family: "メイリオ", "Meiryo", sans-serif;
+  letter-spacing: 0.05em;
+  color: darkslategray;
 }
-#intro{
-    margin-top: 50px;
-    height: 90vh;
-    width: 100vw;   
-    background-color:white;
-    font-size: 0.7em;
+#intro {
+  /* margin-top: 50px; */
+  height: 110vh;
+  width: 100vw;
+  background: #c1e4e9;
+  font-size: 0.7em;
 }
-.sampleimage{
+
+#clickContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.button {
+  display: block;
+  position: relative;
+  width: 25vw;
+  padding: 0.8em;
+  text-align: center;
+  background: rgb(216, 236, 240);
+  text-decoration: none;
+  border: 1px solid rgb(149, 172, 180);
+  font-size: 0.8em;
+}
+.button:hover {
+  background: rgb(242, 250, 250);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#button1 {
+  margin-right: 2vw;
+}
+/* 
+#photoContainer {
+  position: relative;
+} */
+/* .sampleimage{
     width: 50%;
     transform: rotate(90deg);
-
 }
+#demoText{
+    width: 45%;
+    font-size: 2em;
+    color: white;
+    position: absolute;
+    top: 24%;
+    left: 4%;
+    font-weight: bold;
+    letter-spacing: 0.07em;
+}  */
