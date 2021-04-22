@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import {useState, Fragment} from "react";
 import stones from "../images/stones.jpg";
 import {getRgb} from "../utility.js";
 import "./Demo.css";
