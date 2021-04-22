@@ -30,7 +30,7 @@ const Demo = () => {
       >
         <div id="photoContainer">
           <img
-            id="sampleImage"
+            id="demoImage"
             alt="beige stone pebbles"
             onClick={getColor}
             src={stones}
@@ -43,7 +43,12 @@ const Demo = () => {
             <div></div>
           )}
         </div>
-        <div id="demoNameBox">{color.name}</div>
+        <div id="demoNameBox">
+          {color.name}
+          <div id="linkContainer">
+            <a href="#" id="returnButton"></a>
+          </div>
+        </div>
       </div>
     </Fragment>
   );

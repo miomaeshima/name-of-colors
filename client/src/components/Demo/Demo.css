@@ -1,16 +1,16 @@
-#demoContainer{
-    margin-top: 150px;
-    display: flex;
-    flex-direction: row;
-    background: lightgoldenrodyellow;
+#demoContainer {
+  margin-top: 150px;
+  display: flex;
+  flex-direction: row;
+  background: lightgoldenrodyellow;
 }
 #photoContainer {
   margin-top: 5vw;
   position: relative;
-  width: 50vw ;
+  width: 50vw;
 }
 
-#sampleImage {
+#demoImage {
   width: 86%;
   position: abosolute;
   top: 0;
@@ -27,20 +27,54 @@
   font-weight: bold;
   font-family: "メイリオ", "Meiryo", sans-serif;
   top: 20%;
-  left: 5%; 
+  left: 5%;
   letter-spacing: 0.07em;
 }
 
-#demoNameBox{
-    width: 50vw;
-    font-size: 50px;
-    font-family: SimSun, Mincho;
-    display: flex;
-    font-size: 50px;
-    writing-mode: vertical-rl;
-    align-items: center;
-    justify-content: center;
-    padding-top: 70px;
-    padding-bottom: 70px;
- 
+#demoNameBox {
+  width: 50vw;
+  font-size: 50px;
+  font-family: SimSun, Mincho;
+  display: flex;
+  font-size: 50px;
+  writing-mode: vertical-rl;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+#linkContainer {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
+
+#returnButon {
+  border: solid black;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  background-color: black;
+  border-radius: 5px;
+  position: relative;
+  height: 50px;
+  width: 50px;
+}
+
+#returnButton::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  display: block;
+  border-top: solid 4px;
+  border-right: solid 4px;
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
