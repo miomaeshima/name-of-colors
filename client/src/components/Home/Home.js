@@ -7,12 +7,12 @@ import {getRgb} from "../utility.js"
 
 function Home() {
 
-  const demoImage = document.getElementById("sampleImage")
-  const scrollToDemo = (e) =>{
-    e.preventDefault();
-    console.log(demoImage);
-    demoImage.scrollIntoView({behavior: "smooth"});
-  }
+  // const demoImage = document.getElementById("sampleImage")
+  // const scrollToDemo = (e) =>{
+  //   e.preventDefault();
+  //   console.log(demoImage);
+  //   demoImage.scrollIntoView({behavior: "smooth"});
+  // }
 
   return (
     <div id="container">
@@ -28,7 +28,7 @@ function Home() {
         <div id="clickContainer"><div id="selectYourFile"><a href="#selectyourfile" className="button" id="button1">自分のデバイス内の画像を調べる。</a> 
         {/* <Link to="/selectfile">アップロードページ</Link>をクリックしてください。 */}
         </div>
-        <div id="demo"><button onClick={scrollToDemo} className="button">デモを見る。</button>
+        <div id="demo"><a href="#sampleImage" className="button">デモを見る。</a>
         </div></div>              
         </div>
       </div>
