@@ -5,6 +5,7 @@
 #sampleImage {
   width: 50%;
   transform: rotate(90deg);
+  scroll-behavior: smooth;
 }
 #demoText {
   width: 45%;
