@@ -1,6 +1,6 @@
 import { useState, Fragment } from "react";
 import stones from "../images/stones.jpg";
-import { getRgb } from "../utility.js";
+import { getRgb, getRgbOfImg } from "../utility.js";
 import "./Demo.css";
 
 const Demo = () => {
@@ -12,6 +12,13 @@ const Demo = () => {
     setClicked(true);
 
     let data = await getRgb(e);
+    setColor(data);
+  };
+
+  const getDemoColor = async (e) => {
+    let realTarget = e.target.previousElementSibling;
+    setClicked(true);
+    let data = await getRgbOfImg(realTarget);
     setColor(data);
   };
 
@@ -29,7 +36,7 @@ const Demo = () => {
             src={stones}
           />
           {!clicked ? (
-            <div id="demoText">
+            <div id="demoText" onClick={getDemoColor}>
               写真をクリックすると、この写真で一番使われている色の名前が分かります。
             </div>
           ) : (

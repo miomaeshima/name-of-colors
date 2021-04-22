@@ -1,5 +1,5 @@
 #demoContainer{
-    margin-top: 50px;
+    margin-top: 150px;
     display: flex;
     flex-direction: row;
     background: lightgoldenrodyellow;
@@ -25,6 +25,7 @@
   color: white;
   position: absolute;
   font-weight: bold;
+  font-family: "メイリオ", "Meiryo", sans-serif;
   top: 20%;
   left: 5%; 
   letter-spacing: 0.07em;

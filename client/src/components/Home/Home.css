@@ -2,6 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 #container {
   background-color: beige;
   display: flex;
@@ -20,6 +21,7 @@ html {
 }
 #description {
   padding-left: 10vh;
+  padding-right: 10vh;
   font-size: 20px;
   font-family: "メイリオ", "Meiryo", sans-serif;
   letter-spacing: 0.05em;

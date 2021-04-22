@@ -7,13 +7,6 @@ import {getRgb} from "../utility.js"
 
 function Home() {
 
-  // const demoImage = document.getElementById("sampleImage")
-  // const scrollToDemo = (e) =>{
-  //   e.preventDefault();
-  //   console.log(demoImage);
-  //   demoImage.scrollIntoView({behavior: "smooth"});
-  // }
-
   return (
     <div id="container">
       <div id="intro">
