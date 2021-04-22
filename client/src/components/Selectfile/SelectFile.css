@@ -1,9 +1,24 @@
-#selectFile {
-  display: none;
+#selectYourFile {
+  background:grey;
+  height: 100vh;
+  flex:display;
+  flex-direction:column;
+  justify-content: center;
+
+}
+#selectFile{
+  display:none;
+}
+#formToSelectFile {
+  background-color: red;
+  width: 50vw;
+  height: 15vh;
+  flex:display;
+  justify-content:center;
 }
 
-#labelForSelectFile {
-  background-color: rgba(170, 170, 170, 0.137);
+label{
+  font-size: 1.5em;
 }
 
 #chosenPic {
@@ -14,9 +29,12 @@
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  background-color: grey;
+  background-color:lightgreen;
 }
 
-#colorContainer {
+#photoContainer{
+  width: 50vw;
+  /* #colorContainer {
   width: 50%;
+} */
 }

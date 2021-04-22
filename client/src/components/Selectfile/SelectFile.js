@@ -8,7 +8,6 @@ function SelectFile() {
   const [picSrc, setPicSrc] = useState(null);
   const [picName, setPicName] = useState("");
   const [color, setColor] = useState({});
- 
 
   const preview = (e) => {
     e.preventDefault();
@@ -21,7 +20,6 @@ function SelectFile() {
     reader.readAsDataURL(previewPic);
 
     reader.onload = function () {
-   
       setPicSrc(reader.result);
       setPicName(previewPic.name);
     };
@@ -32,89 +30,96 @@ function SelectFile() {
     setColor(data);
   };
 
-//   return (
-//     <Fragment>
-//       <div
-//         id="selectContainer"
-//         style={{ background: `rgb(${color.r}, ${color.g}, ${color.b})` }}
-//       >
-//         <a name="selectYourFile">
-//           {!selected ? (
-//             <form>
-//               <label id="labelForSelectFile" htmlFor="selectFile">
-//                 Select file
-//               </label>
-//               <input
-//                 type="file"
-//                 id="selectFile"
-//                 accept="image/*"
-//                 onChange={preview}
-//               ></input>
-//             </form>
-//           ) : (
-//             <div id="previewContainer">
-//               <img
-//                 id="chosenPic"
-//                 style={{ background: "grey" }}
-//                 alt={picName}
-//                 src={picSrc}
-//                 onClick={getColor}
-//               />
-//               <div
-//                 id="colorContainer"
-//                 style={{
-//                   background: `rgb(${color.r}, ${color.g}, ${color.b})`,
-//                 }}
-//               >
-//                 {color.name}
-//               </div>
-//             </div>
-//           )}
-//         </a>
-//       </div>
-//     </Fragment>
-//   );
-// })
+  //   return (
+  //     <Fragment>
+  //       <div
+  //         id="selectContainer"
+  //         style={{ background: `rgb(${color.r}, ${color.g}, ${color.b})` }}
+  //       >
+  //         <a name="selectYourFile">
+  //           {!selected ? (
+  //             <form>
+  //               <label id="labelForSelectFile" htmlFor="selectFile">
+  //                 Select file
+  //               </label>
+  //               <input
+  //                 type="file"
+  //                 id="selectFile"
+  //                 accept="image/*"
+  //                 onChange={preview}
+  //               ></input>
+  //             </form>
+  //           ) : (
+  //             <div id="previewContainer">
+  //               <img
+  //                 id="chosenPic"
+  //                 style={{ background: "grey" }}
+  //                 alt={picName}
+  //                 src={picSrc}
+  //                 onClick={getColor}
+  //               />
+  //               <div
+  //                 id="colorContainer"
+  //                 style={{
+  //                   background: `rgb(${color.r}, ${color.g}, ${color.b})`,
+  //                 }}
+  //               >
+  //                 {color.name}
+  //               </div>
+  //             </div>
+  //           )}
+  //         </a>
+  //       </div>
+  //     </Fragment>
+  //   );
+  // })
 
-
-return (
-<Fragment>
-  {!selected ? 
-    ( <form name="selectYourFile">  
-              <label id="labelForSelectFile" htmlFor="selectFile">
-                Select file
-              </label>
-              <input
-                type="file"
-                id="selectFile"
-                accept="image/*"
-                onChange={preview}
-              ></input>
-            </form>
-
-    ):(
-      <div id="selectContainer" style={{ background: `rgb(${color.r}, ${color.g}, ${color.b})`}}>
-        <div id="photoContainer">
-            <img id="chosenPic"
-                style={{ background: "grey" }}
-                alt={picName}
-                src={picSrc}
-                onClick={getColor}
+  return (
+    <div id="selectYourFile">
+      {!selected ? (
+          <form name="selectYourFile" id="formToSelectFile">
+          <label htmlFor="selectFile">
+            ここをクリックして画像ファイルを選んでください。
+          </label>
+          <input
+            type="file"
+            id="selectFile"
+            accept="image/*"
+            onChange={preview}
+          ></input>
+        </form>
+      ) : (
+        <div
+          id="selectContainer"
+          style={{ background: `rgb(${color.r}, ${color.g}, ${color.b})` }}
+        >
+          <div id="previewContainer">
+            <img
+              id="chosenPic"
+              style={{ background: "grey" }}
+              alt={picName}
+              src={picSrc}
+              onClick={getColor}
             />
-        </div>
-        { Object.keys(color).length === 0 ?(
-                <div> 写真をクリックすると、この写真で一番使われている色の名前が分かります。</div>
-              ):(<div></div>)
-        }  
-        <div id="selectNameBox">{color.name}
-          <div id="linkContainer">
-              <a href="#" id="returnButton"></a>
+          </div>
+          {Object.keys(color).length === 0 ? (
+            <div>
+              
+              写真をクリックすると、この写真で一番使われている色の名前が分かります。
+            </div>
+          ) : (
+            <div></div>
+          )}
+          <div id="selectNameBox">
+            {color.name}
+            <div id="linkContainer">
+              <a href="#home" className="returnButton">Go back to top</a>
+            </div>
           </div>
         </div>
-      </div>
-    )}
-  </Fragment>
+      )}
+    </div>
   );
-};
+}
 
 export default SelectFile;

@@ -46,7 +46,7 @@ const Demo = () => {
         <div id="demoNameBox">
           {color.name}
           <div id="linkContainer">
-            <a href="#" id="returnButton"></a>
+            <a href="#top" className="returnButton"></a>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#container {
+#home {
   background-color: beige;
   display: flex;
   flex-direction: column;
