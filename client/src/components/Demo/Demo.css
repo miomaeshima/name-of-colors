@@ -15,7 +15,7 @@
   position: abosolute;
   top: 0;
   left: 0;
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
   scroll-behavior: smooth;
 }
 #demoText {
@@ -51,31 +51,3 @@
   top: 90%;
   left: 90%;
 }
-/* 
-#returnButon {
-  border: solid black;
-  display: inline-block;
-  color: #fff;
-  text-decoration: none;
-  background-color: black;
-  border-radius: 5px;
-  position: relative;
-  height: 50px;
-  width: 50px;
-}
-
-#returnButton::before {
-  content: "";
-  width: 20px;
-  height: 20px;
-  display: block;
-  border-top: solid 4px;
-  border-right: solid 4px;
-  transform: rotate(-45deg);
-  position: absolute;
-  top: 10px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
-} */
