@@ -1,5 +1,5 @@
 import { useState, Fragment } from "react";
-import stones from "../images/stones.jpg";
+import beigestones from "../images/beigestones.jpg";
 import { getRgb, getRgbOfImg } from "../utility.js";
 import "./Demo.css";
 
@@ -28,7 +28,7 @@ const Demo = () => {
             id="demoImage"
             alt="beige stone pebbles"
             onClick={getColor}
-            src={stones}
+            src={beigestones}
           />
           {Object.keys(color).length === 0 ? (
             <div id="demoText" onClick={getDemoColor}>
@@ -46,7 +46,7 @@ const Demo = () => {
               : { color: "black" }
           }
         >
-        
+
           {color.name}
           <div id="linkContainer">
             <a href="#top" className="returnButton"></a>
