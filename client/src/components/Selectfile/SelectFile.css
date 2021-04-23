@@ -30,12 +30,13 @@ label:active{
 
 #previewOuterContainer{
   height:100%;
-
+  
 }
 
 #previewBox{
   display:flex;
   flex-direction:row;
+  background: lightgoldenrodyellow;
 }
 
 #previewContainer {
@@ -48,16 +49,20 @@ label:active{
 }
 
 #instruction{
-  margin-left:15px;
   margin-top: 5px;
+  color:white;
+  padding-left: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   font-weight: bold;
   font-family: "メイリオ", "Meiryo", sans-serif;
   font-size:1em;
+  background: rgb(0, 0, 0, 0.1)
 }
 #selectNameBox {
   width: 50vw;
   font-size: 50px;
-  font-family: SimSun, Mincho;
+  font-family: Ryumin Regular KL;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;

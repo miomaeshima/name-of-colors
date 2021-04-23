@@ -11,7 +11,7 @@
 }
 
 #demoImage {
-  width: 90%;
+  width: 80%;
   position: abosolute;
   top: 0;
   left: 0;
@@ -35,7 +35,7 @@
 #demoNameBox {
   width: 50vw;
   font-size: 50px;
-  font-family: SimSun, Mincho;
+  font-family: Ryumin Regular KL;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;
