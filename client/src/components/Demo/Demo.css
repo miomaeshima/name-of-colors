@@ -5,13 +5,13 @@
   background: lightgoldenrodyellow;
 }
 #photoContainer {
-  margin-top: 5vw;
+  margin-top: 4vw;
   position: relative;
-  width: 50vw;
+  width: 60vw;
 }
 
 #demoImage {
-  width: 86%;
+  width: 90%;
   position: abosolute;
   top: 0;
   left: 0;

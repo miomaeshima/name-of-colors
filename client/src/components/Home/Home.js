@@ -1,9 +1,5 @@
-//import { Link } from "react-router-dom";
 import "./Home.css";
-// import stones from "../images/stones.jpg";
 import { getRgb } from "../utility.js";
-// import ColorThief from "colorthief";
-// const colorThief = new ColorThief();
 
 function Home() {
   return (

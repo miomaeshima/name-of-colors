@@ -1,7 +1,6 @@
 #selectYourFile {
-  margin-top: 150px;
-  background:lightygrey;
-  height: 100vh;
+  margin-top: 90px;
+  height: 120vh;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +20,6 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  
 }
 
 label:active{
@@ -30,19 +28,50 @@ label:active{
   top:5px;
 }
 
-#selectContainer{
+#previewOuterContainer{
   height:100%;
-  background: yellow;
+
+}
+
+#previewBox{
+  display:flex;
+  flex-direction:row;
 }
 
 #previewContainer {
+  margin-top: 4vw;
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
+  height: auto;
+  justify-content: flex-start;  
+  display:flex;
+  flex-direction:column; 
+}
 
-  
+#instruction{
+  margin-left:15px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: "メイリオ", "Meiryo", sans-serif;
+  font-size:1em;
 }
-#chosenPic {
-  width: 50%;
+#selectNameBox {
+  width: 50vw;
+  font-size: 50px;
+  font-family: SimSun, Mincho;
+  display: flex;
+  font-size: 50px;
+  writing-mode: vertical-rl;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
 }
+
+#linkContainer {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
+
 
