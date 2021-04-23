@@ -2,7 +2,7 @@ html {
   scroll-behavior: smooth;
 }
 
-#container {
+#home {
   background-color: beige;
   display: flex;
   flex-direction: column;
@@ -58,21 +58,5 @@ html {
 #button1 {
   margin-right: 2vw;
 }
-/* 
-#photoContainer {
-  position: relative;
-} */
-/* .demoImage{
-    width: 50%;
-    transform: rotate(90deg);
-}
-#demoText{
-    width: 45%;
-    font-size: 2em;
-    color: white;
-    position: absolute;
-    top: 24%;
-    left: 4%;
-    font-weight: bold;
-    letter-spacing: 0.07em;
-}  */
+
+

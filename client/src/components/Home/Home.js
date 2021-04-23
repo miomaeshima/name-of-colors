@@ -1,13 +1,9 @@
-import { Link } from "react-router-dom";
 import "./Home.css";
-// import stones from "../images/stones.jpg";
 import { getRgb } from "../utility.js";
-// import ColorThief from "colorthief";
-// const colorThief = new ColorThief();
 
 function Home() {
   return (
-    <div id="container">
+    <div id="home">
       <div id="intro">
         <div id="title">色の名前</div>
         <div id="description">
@@ -22,12 +18,12 @@ function Home() {
           <br />
           <br />
           <div id="clickContainer">
-            <div id="selectYourFile">
+            <div>
               <a href="#selectYourFile" className="button" id="button1">
                 自分のデバイス内の画像を調べる。
               </a>
             </div>
-            <div id="demo">
+            <div>
               <a href="#demoImage" className="button">
                 デモを見る。
               </a>

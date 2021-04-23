@@ -1,22 +1,77 @@
-#selectFile {
-  display: none;
+#selectYourFile {
+  margin-top: 90px;
+  height: 120vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#selectFile{
+  display:none;
 }
 
-#labelForSelectFile {
-  background-color: rgba(170, 170, 170, 0.137);
+#label{
+  margin-left: 5vw;
+  font-size: 20px;
+  letter-spacing: 0.05em;
+  height:10vh; 
+  max-width: 50vw; 
+  box-shadow: 0px 0px 15px lightgrey;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
-#chosenPic {
-  width: 50%;
+label:active{
+  box-shadow: none;
+  position:relative;
+  top:5px;
+}
+
+#previewOuterContainer{
+  height:100%;
+
+}
+
+#previewBox{
+  display:flex;
+  flex-direction:row;
 }
 
 #previewContainer {
+  margin-top: 4vw;
   display: flex;
-  width: 100%;
-  justify-content: flex-start;
-  background-color: grey;
+  height: auto;
+  justify-content: flex-start;  
+  display:flex;
+  flex-direction:column; 
 }
 
-#colorContainer {
-  width: 50%;
+#instruction{
+  margin-left:15px;
+  margin-top: 5px;
+  font-weight: bold;
+  font-family: "メイリオ", "Meiryo", sans-serif;
+  font-size:1em;
 }
+#selectNameBox {
+  width: 50vw;
+  font-size: 50px;
+  font-family: SimSun, Mincho;
+  display: flex;
+  font-size: 50px;
+  writing-mode: vertical-rl;
+  align-items: center;
+  justify-content: center;
+  padding-top: 70px;
+  padding-bottom: 70px;
+  position: relative;
+}
+
+#linkContainer {
+  position: absolute;
+  top: 90%;
+  left: 90%;
+}
+
+
