@@ -4,12 +4,12 @@ import { getRgb, getRgbOfImg } from "../utility.js";
 import "./Demo.css";
 
 const Demo = () => {
-  const [clicked, setClicked] = useState(false);
+  //const [clicked, setClicked] = useState(false);
   const [color, setColor] = useState({});
 
   const getColor = async (e) => {
     // e.preventDefault();
-    setClicked(true);
+    //setClicked(true);
 
     let data = await getRgb(e);
     setColor(data);
@@ -17,7 +17,7 @@ const Demo = () => {
 
   const getDemoColor = async (e) => {
     let realTarget = e.target.previousElementSibling;
-    setClicked(true);
+    //setClicked(true);
     let data = await getRgbOfImg(realTarget);
     setColor(data);
   };
@@ -35,7 +35,8 @@ const Demo = () => {
             onClick={getColor}
             src={stones}
           />
-          {!clicked ? (
+          {/* {!clicked ? ( */}
+          {Object.keys(color).length === 0 ? (
             <div id="demoText" onClick={getDemoColor}>
               写真をクリックすると、この写真で一番使われている色の名前が分かります。
             </div>

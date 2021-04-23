@@ -9,6 +9,7 @@
 #selectFile{
   display:none;
 }
+
 #formToSelectFile {
   background-color: red;
   width: 50vw;
@@ -21,20 +22,18 @@ label{
   font-size: 1.5em;
 }
 
-#chosenPic {
-  width: 50%;
+#selectContainer{
+  background: pink;
 }
 
 #previewContainer {
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  background-color:lightgreen;
+
+  
+}
+#chosenPic {
+  width: 50%;
 }
 
-#photoContainer{
-  width: 50vw;
-  /* #colorContainer {
-  width: 50%;
-} */
-}
