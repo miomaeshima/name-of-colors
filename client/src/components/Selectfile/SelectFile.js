@@ -8,31 +8,32 @@ function SelectFile() {
   const [picSrc, setPicSrc] = useState(null);
   const [picName, setPicName] = useState("");
   const [color, setColor] = useState({});
+  const [wide, setWide] = useState(true)
 
   const preview = (e) => {
     e.preventDefault();
   //  setSelected(true);
     setPreviewPic(e.target.files[0]);
   };
-  if (previewPic !== null){
-    console.log("not null")
-  } else {
-    console.log("null")
-  }
-  
-console.log(previewPic)
+
  // if (selected) {
-  if(previewPic !== null){
-  
+  if(previewPic !== null){  
   let reader = new FileReader();   
     reader.readAsDataURL(previewPic);
+  let image = new Image();
     reader.onload = function () {
       setPicSrc(reader.result);
-      setPicName(previewPic.name);      
-    };  
+      setPicName(previewPic.name);
+      image.src = reader.result;
+      image.onload = function(){
+        if (image.width<image.height){
+          setWide(false);
+        }
+      }      
+    }   
     }
 
-  
+  console.log(wide)
 
   const getColor = async (e) => {
     let data = await getRgb(e);
