@@ -1,9 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, {useState } from "react";
 import "./SelectFile.css";
 import { getRgb } from "../utility.js";
 
 function SelectFile() {
-  const [selected, setSelected] = useState(false);
+ // const [selected, setSelected] = useState(false);
   const [previewPic, setPreviewPic] = useState(null);
   const [picSrc, setPicSrc] = useState(null);
   const [picName, setPicName] = useState("");
@@ -11,19 +11,28 @@ function SelectFile() {
 
   const preview = (e) => {
     e.preventDefault();
-    setSelected(true);
+  //  setSelected(true);
     setPreviewPic(e.target.files[0]);
   };
-
-  if (selected) {
-    let reader = new FileReader();
+  if (previewPic !== null){
+    console.log("not null")
+  } else {
+    console.log("null")
+  }
+  
+console.log(previewPic)
+ // if (selected) {
+  if(previewPic !== null){
+  
+  let reader = new FileReader();   
     reader.readAsDataURL(previewPic);
-
     reader.onload = function () {
       setPicSrc(reader.result);
-      setPicName(previewPic.name);
-    };
-  }
+      setPicName(previewPic.name);      
+    };  
+    }
+
+  
 
   const getColor = async (e) => {
     let data = await getRgb(e);
@@ -75,11 +84,13 @@ function SelectFile() {
   // })
 
   return (
+    
     <div id="selectYourFile">
-      {!selected ? (
+     {/* // {!selected ? ( */}
+        {(previewPic === null) ? (
           <form name="selectYourFile" id="formToSelectFile">
-          <label htmlFor="selectFile">
-            ここをクリックして画像ファイルを選んでください。
+          <label id="label" htmlFor="selectFile">
+            ここをクリックして、色を調べたい画像ファイルを選んでください。
           </label>
           <input
             type="file"

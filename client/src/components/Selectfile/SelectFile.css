@@ -1,29 +1,33 @@
 #selectYourFile {
-  background:grey;
+  margin-top: 150px;
+  background:lightygrey;
   height: 100vh;
-  flex:display;
-  flex-direction:column;
+  display:flex;
+  flex-direction: column;
   justify-content: center;
-
 }
 #selectFile{
   display:none;
 }
 
-#formToSelectFile {
-  background-color: red;
-  width: 50vw;
-  height: 15vh;
-  flex:display;
-  justify-content:center;
+#label{
+  margin-left: 5vw;
+  font-size: 1.5em;
+  letter-spacing: 0.05em;
+  height:15vh;  
+  padding: 20px;
+  box-shadow: 0px 0px 15px lightgrey;
 }
 
-label{
-  font-size: 1.5em;
+label:active{
+  box-shadow: none;
+  position:relative;
+  top:5px;
 }
 
 #selectContainer{
-  background: pink;
+  height:100%;
+  background: yellow;
 }
 
 #previewContainer {
