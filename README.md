@@ -31,6 +31,6 @@ Many of the names are no longer used in our daily conversation, but it's rich.
 もう今では使わない名前もたくさんあります。でもこんなに豊かな名前を使わない手はありません。  
 
 I'm going to add palettes in other languages, but still you can try with this one.  
-他の言語でも名前を探せるようにしていきます。でも、まずこれからどうぞ楽しんでください。  
+他の言語でも名前を探せるようにしていきます。でも、まず日本の伝統色からどうぞ楽しんでください。  
 
 
