@@ -1,9 +1,11 @@
 #demoContainer {
+  position: relative;
+  height: 120vh;
   margin-top: 150px;
   display: flex;
   flex-direction: row;
-  background: lightgoldenrodyellow;
 }
+
 #photoContainer {
   margin-top: 4vw;
   position: relative;
@@ -19,17 +21,22 @@
   scroll-behavior: smooth;
 }
 #demoText {
+  position: absolute;
+  top: 10%;
+  left: 5%;
   width: 80%;
-  font-size: 1.7em;
+  font-size: clamp(
+    1.2rem,
+    1vw + 1rem,
+    2.5rem
+  );
   letter-spacing: 0.05em;
   color: white;
-  position: absolute;
   font-weight: bold;
   font-family: "メイリオ", "Meiryo", sans-serif;
-  top: 20%;
-  left: 5%;
   letter-spacing: 0.07em;
-  background: rgb(0, 0, 0, 0.1)
+  background: rgb(0, 0, 0, 0.1);
+  pointer-events: none;
 }
 
 #demoNameBox {
@@ -48,6 +55,12 @@
 
 #linkContainer {
   position: absolute;
-  top: 90%;
-  left: 90%;
+  bottom: 14%;
+  right: 3%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+
 }
+

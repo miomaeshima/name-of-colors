@@ -1,5 +1,10 @@
+body{
+  height: 100%
+}
+
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 #home {
@@ -9,9 +14,10 @@ html {
 }
 
 #title {
-  font-size: 7vw;
+  font-size: 80px;
   font-family: SimSun, Mincho;
-  padding: 10vw;
+  padding-left: 10vw;
+  padding-top: 15vh;
   color: darkslategray;
 
   display: flex;
@@ -22,20 +28,23 @@ html {
   padding-left: 10vw;
   padding-right: 10vw;
   font-size: 20px;
-  font-family: "メイリオ", "Meiryo", sans-serif;
+  font-family: "Ryumin Regular KL";
+  /* font-family: "メイリオ", "Meiryo", sans-serif; */
   letter-spacing: 0.05em;
   color: darkslategray;
 }
 #intro {
   /* margin-top: 50px; */
-  height: 110vh;
+  height: 115vh;
   width: 100vw;
   background: #c1e4e9;
 }
 
 #clickContainer {
+  width: 100vw;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .button {
@@ -48,6 +57,7 @@ html {
   text-decoration: none;
   border: 1px solid rgb(149, 172, 180);
   font-size: 0.8em;
+  margin-top:10px;
 }
 .button:hover {
   background: rgb(242, 250, 250);

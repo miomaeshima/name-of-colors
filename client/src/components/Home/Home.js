@@ -1,5 +1,4 @@
 import "./Home.css";
-import { getRgb } from "../utility.js";
 
 function Home() {
   return (
