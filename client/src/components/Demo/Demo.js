@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from "react";
 import beigestones from "../images/beigestones.jpg";
 import { getRgb, getRgbOfImg } from "../utility.js";
-import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
+import { LinkToTop, Refresh, Next } from "../NavLinks/NavLinks.js";
 import "./Demo.css";
 
 const Demo = () => {
@@ -14,12 +14,12 @@ const Demo = () => {
     setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
   };
 
-  const getDemoColor = async (e) => {
-    let realTarget = e.target.previousElementSibling;
-    let data = await getRgbOfImg(realTarget);
-    setColorData(data);
-    setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
-  };
+  // const getDemoColor = async (e) => {
+  //   let realTarget = e.target.previousElementSibling;
+  //   let data = await getRgbOfImg(realTarget);
+  //   setColorData(data);
+  //   setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
+  // };
 
   const refresh = () => {
     setDemoColor("lightgoldenrodyellow");
@@ -60,7 +60,8 @@ const Demo = () => {
         <div id="linkContainer">
           <LinkToTop fontColor={fontColor} />
           <Refresh fontColor={fontColor} onClick={() => refresh()} />
-        </div>
+          <Next fontColor={fontColor} />
+        </div>        
       </div>
     </Fragment>
   );

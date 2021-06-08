@@ -1,39 +1,54 @@
 import React from "react";
-import {ChevronsUp, RefreshCw } from "react-feather";
+import {ChevronsUp, RefreshCw, ChevronsDown } from "react-feather";
+import "./NavLinks.css";
 
 const LinkToTop = (fontColor) => {
 
     return (
-        <div id="linkToTop">
-        <ChevronsUp
-          size={32}
-          strokeWidth={1}
-          style= {fontColor}
-          
-        />
-        <a href="#home" className="invisibleAnchor">
-          top
-        </a>
-        {/* <a href="#top" className="returnButton"></a>  */}
+        <div className="chevrons">
+            <ChevronsUp
+            className="icon"
+            size={"2rem"}
+            strokeWidth={1}
+            style= {fontColor}          
+            />
+            <a href="#home" className="invisibleAnchor">
+            Return to top
+            </a>
+            {/* <a href="#top" className="returnButton"></a>  */}
       </div>
     )
 }
 
 const Refresh = ({fontColor, onClick}) => {
   
-      
- 
-
-    return (
-        <div id="refresh">
+     return (
+        <div className="refresh">
             <RefreshCw       
-                size={32}
+                size={"1.5rem"}
                 strokeWidth={1}
                 style={fontColor} 
-                onClick={onClick}      
-            
+                onClick={onClick}     
             />
         </div>
     )
 }
-export {LinkToTop, Refresh};
+
+const Next = (fontColor) =>{
+    
+    return(
+    <div class="chevrons">
+        <ChevronsDown 
+        className="icon"
+        size={"2rem"}
+        strokeWidth={1}
+        style= {fontColor}                
+        />
+        <a href="#selectYourFile" className="invisibleAnchor">
+        Next
+        </a>
+   </div>
+    )
+}
+
+export {LinkToTop, Refresh, Next};
