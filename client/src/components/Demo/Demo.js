@@ -17,6 +17,13 @@ const Demo = () => {
     let data = await getRgbOfImg(realTarget);
     setColor(data);
   };
+    let fontColor;
+    if ((color.r * 299 + color.g * 587 + color.b * 114) / 1000 < 128){
+      fontColor={color:"white"};
+    } else {
+      fontColor={color:"black"};
+    }
+  
 
   return (
     <Fragment>
@@ -41,27 +48,14 @@ const Demo = () => {
         </div>
         <div
           id="demoNameBox"
-          style={
-            (color.r * 299 + color.g * 587 + color.b * 114) / 1000 < 128
-              ? { color: "white" }
-              : { color: "black" }
-          }
+          style={fontColor}
         >
           {color.name}
           <div id="upButtonContainer">
-            <ChevronsUp
-              size={32}
-              strokeWidth={1}
-              style={
-                (color.r * 299 + color.g * 587 + color.b * 114) / 1000 < 128
-                  ? { color: "white" }
-                  : { color: "black" }
-              }
-            />
+            <ChevronsUp fontColr={fontColor} />
             <a href="#home" class="invisibleAnchor">
               top
-            </a>
-            {/* <a href="#top" className="returnButton"></a>  */}
+            </a>            
           </div>
         </div>
       </div>
