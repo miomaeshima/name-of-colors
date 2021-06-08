@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import beigestones from "../images/beigestones.jpg";
-import { getRgb, getRgbOfImg } from "../utility.js";
+import { getRgb} from "../utility.js";
 import { LinkToTop, Refresh, Next } from "../NavLinks/NavLinks.js";
 import "./Demo.css";
 
@@ -53,14 +53,16 @@ const Demo = () => {
             <div></div>
           )}
         </div>
+        
         <div id="demoNameBox" style={fontColor}>
           {colorData.name}
         </div>
+        
         <div id="linkContainer">
           <LinkToTop fontColor={fontColor} />
           <Refresh fontColor={fontColor} onClick={() => refresh()} />
           <Next fontColor={fontColor} />
-        </div>        
+        </div> 
       </div>
     </Fragment>
   );
