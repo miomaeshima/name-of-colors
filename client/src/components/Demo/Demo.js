@@ -14,13 +14,6 @@ const Demo = () => {
     setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
   };
 
-  // const getDemoColor = async (e) => {
-  //   let realTarget = e.target.previousElementSibling;
-  //   let data = await getRgbOfImg(realTarget);
-  //   setColorData(data);
-  //   setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
-  // };
-
   const refresh = () => {
     setDemoColor("lightgoldenrodyellow");
     setColorData({});
@@ -32,6 +25,11 @@ const Demo = () => {
   } else {
     fontColor = { color: "black" };
   }
+
+  let clickable = false;
+  if (Object.keys(colorData).length===0){
+    clickable = true;
+  } 
 
   return (
     <Fragment>
@@ -45,8 +43,9 @@ const Demo = () => {
             alt="beige stone pebbles"
             onClick={getColor}
             src={beigestones}
+            style={clickable? {cursor:"pointer"}: {cursor:"revert"}} 
           />
-          {Object.keys(colorData).length === 0 ? (
+          {clickable?(
             <div id="demoText">
               写真をクリックすると、この写真で一番使われている色の名前が分かります。
             </div>
