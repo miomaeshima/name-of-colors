@@ -47,7 +47,7 @@ const Demo = () => {
             src={beigestones}
           />
           {Object.keys(colorData).length === 0 ? (
-            <div id="demoText" onClick={getDemoColor}>
+            <div id="demoText">
               写真をクリックすると、この写真で一番使われている色の名前が分かります。
             </div>
           ) : (
