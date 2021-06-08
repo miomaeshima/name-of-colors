@@ -39,6 +39,7 @@ const SelectFile = () => {
   };
 
   const refresh = () => {
+    setPreviewPic(null);
     setBackgroundColor("transparent");
     setColorData({});
   };

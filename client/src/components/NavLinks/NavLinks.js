@@ -10,7 +10,7 @@ const LinkToTop = (fontColor) => {
             className="icon"
             size={"2rem"}
             strokeWidth={1}
-            style= {fontColor}          
+            style={fontColor}          
             />
             <a href="#home" className="invisibleAnchor">
             Return to top
@@ -22,6 +22,7 @@ const LinkToTop = (fontColor) => {
 
 const Refresh = ({fontColor, onClick}) => {
   
+    console.log(fontColor);
      return (
         <div className="refresh">
             <RefreshCw       
@@ -42,7 +43,7 @@ const Next = (fontColor) =>{
         className="icon"
         size={"2rem"}
         strokeWidth={1}
-        style= {fontColor}                
+        style={fontColor}                
         />
         <a href="#selectYourFile" className="invisibleAnchor">
         Next
