@@ -1,6 +1,7 @@
 import { useState, Fragment } from "react";
 import beigestones from "../images/beigestones.jpg";
 import { getRgb, getRgbOfImg } from "../utility.js";
+import { ChevronsUp, RefreshCw } from "react-feather";
 import "./Demo.css";
 
 const Demo = () => {
