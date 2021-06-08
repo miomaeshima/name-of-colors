@@ -2,6 +2,7 @@ import { useState, Fragment } from "react";
 import beigestones from "../images/beigestones.jpg";
 import { getRgb, getRgbOfImg } from "../utility.js";
 import { ChevronsUp, RefreshCw } from "react-feather";
+import {LinkToTop, Refresh} from "../NavLinks/NavLinks.js"
 import "./Demo.css";
 
 const Demo = () => {
@@ -51,12 +52,7 @@ const Demo = () => {
           style={fontColor}
         >
           {color.name}
-          <div id="upButtonContainer">
-            <ChevronsUp fontColr={fontColor} />
-            <a href="#home" class="invisibleAnchor">
-              top
-            </a>            
-          </div>
+        <LinkToTop fontColor={fontColor}/>
         </div>
       </div>
     </Fragment>

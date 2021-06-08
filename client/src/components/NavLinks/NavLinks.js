@@ -18,4 +18,16 @@ const LinkToTop = (fontColor) => {
     )
 }
 
-export {LinkToTop, };
+const Refresh = (fontColor) => {
+
+    return (
+        <div>
+            <RefreshCw 
+                size={32}
+                strokeWidth={1}
+                sttke={{fontColor}}
+            />
+        </div>
+    )
+}
+export {LinkToTop, Refresh};
