@@ -1,5 +1,10 @@
+body{
+  height: 100%
+}
+
 html {
   scroll-behavior: smooth;
+  height: 100%;
 }
 
 #home {
@@ -11,7 +16,8 @@ html {
 #title {
   font-size: 80px;
   font-family: SimSun, Mincho;
-  padding: 10vw;
+  padding-left: 10vw;
+  padding-top: 15vh;
   color: darkslategray;
 
   display: flex;
