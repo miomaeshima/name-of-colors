@@ -4,13 +4,14 @@ import {ChevronsUp, RefreshCw } from "react-feather";
 const LinkToTop = (fontColor) => {
 
     return (
-        <div id="upButtonContainer">
+        <div id="linkToTop">
         <ChevronsUp
           size={32}
           strokeWidth={1}
-          style= {{fontColor}}
+          style= {fontColor}
+          
         />
-        <a href="#home" class="invisibleAnchor">
+        <a href="#home" className="invisibleAnchor">
           top
         </a>
         {/* <a href="#top" className="returnButton"></a>  */}
@@ -18,14 +19,19 @@ const LinkToTop = (fontColor) => {
     )
 }
 
-const Refresh = (fontColor) => {
+const Refresh = ({fontColor, onClick}) => {
+  
+      
+ 
 
     return (
-        <div>
-            <RefreshCw 
+        <div id="refresh">
+            <RefreshCw       
                 size={32}
                 strokeWidth={1}
-                sttke={{fontColor}}
+                style={fontColor} 
+                onClick={onClick}      
+            
             />
         </div>
     )
