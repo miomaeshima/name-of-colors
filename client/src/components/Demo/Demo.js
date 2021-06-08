@@ -47,10 +47,21 @@ const Demo = () => {
               : { color: "black" }
           }
         >
-
           {color.name}
-          <div id="linkContainer">
-            <a href="#top" className="returnButton"></a>
+          <div id="upButtonContainer">
+            <ChevronsUp
+              size={32}
+              strokeWidth={1}
+              style={
+                (color.r * 299 + color.g * 587 + color.b * 114) / 1000 < 128
+                  ? { color: "white" }
+                  : { color: "black" }
+              }
+            />
+            <a href="#home" class="invisibleAnchor">
+              top
+            </a>
+            {/* <a href="#top" className="returnButton"></a>  */}
           </div>
         </div>
       </div>
