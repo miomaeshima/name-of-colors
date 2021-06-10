@@ -59,14 +59,13 @@ label:active{
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
-  font-family: "メイリオ", "Meiryo", sans-serif;
   font-size:1em;
   background: rgb(0, 0, 0, 0.1)
 }
 #selectNameBox {
   width: 50vw;
   font-size: 3rem;
-  font-family: Ryumin Regular KL;
+  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;
