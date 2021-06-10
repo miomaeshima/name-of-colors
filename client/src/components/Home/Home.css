@@ -1,5 +1,7 @@
 body{
-  height: 100%
+  height: 100%;
+  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  color: #1c1c1c;
 }
 
 html {
@@ -15,7 +17,7 @@ html {
 
 #title {
   font-size: 80px;
-  font-family: SimSun, Mincho;
+  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
   padding-left: 10vw;
   padding-top: 15vh;
   color: darkslategray;
@@ -28,8 +30,7 @@ html {
   padding-left: 10vw;
   padding-right: 10vw;
   font-size: 20px;
-  font-family: "Ryumin Regular KL";
-  /* font-family: "メイリオ", "Meiryo", sans-serif; */
+  font-family: "メイリオ", "Meiryo", sans-serif;
   letter-spacing: 0.05em;
   color: darkslategray;
 }
