@@ -9,7 +9,7 @@ const SelectFile = () => {
   const [picName, setPicName] = useState("");
   const [colorData, setColorData] = useState({});
   const [wide, setWide] = useState(true);
-  const [backgroundColor, setBackgroundColor] = useState("transparent")
+  const [backgroundColor, setBackgroundColor] = useState("transparent");
 
   const preview = (e) => {
     e.preventDefault();
@@ -35,7 +35,7 @@ const SelectFile = () => {
   const getColor = async (e) => {
     let data = await getRgb(e);
     setColorData(data);
-    setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`)
+    setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
   };
 
   const refresh = () => {
@@ -45,49 +45,49 @@ const SelectFile = () => {
   };
 
   let fontColor;
-  if ((colorData.r * 299 + colorData.g * 587 + colorData.b * 114) / 1000 < 128) {
+  if (
+    (colorData.r * 299 + colorData.g * 587 + colorData.b * 114) / 1000 <
+    128
+  ) {
     fontColor = { color: "white" };
   } else {
     fontColor = { color: "black" };
   }
 
   let clickable = false;
-  if (Object.keys(colorData).length === 0){
+  if (Object.keys(colorData).length === 0) {
     clickable = true;
   }
 
-  let clickableCursor = {cursor: "revert"};
+  let clickableCursor = { cursor: "revert" };
   if (clickable) {
-    clickableCursor = {cursor: "pointer"}
+    clickableCursor = { cursor: "pointer" };
   }
 
-  let dimension = { marginLeft: "5vw", width: "40vw", height: "auto"};
-  if (wide){
-    dimension = { width: "60vw", height: "auto" }
+  let dimension = { marginLeft: "5vw", width: "40vw", height: "auto" };
+  if (wide) {
+    dimension = { width: "60vw", height: "auto" };
   }
 
-  let imgStyles = {...dimension, ...clickableCursor}
+  let imgStyles = { ...dimension, ...clickableCursor };
 
   return (
     <div id="selectYourFile">
-          {previewPic === null ? (
-          <form name="selectFileForm">
-            <label id="label" htmlFor="selectFile">
-              ここをクリックして、色を調べたい画像ファイルを選んでください。
-            </label>
-            <input
-              type="file"
-              id="selectFile"
-              accept="image/*"
-              onChange={preview}
-            ></input>
-          </form>
-          ) : (
-            <div
-              id="previewBox"
-              style={{background: backgroundColor}}
-            >
-           <div id="previewOuterContainer">
+      {previewPic === null ? (
+        <form name="selectFileForm">
+          <label id="label" htmlFor="selectFile" tabIndex="0">
+            ここをクリックして、色を調べたい画像ファイルを選んでください。
+          </label>
+          <input
+            type="file"
+            id="selectFile"
+            accept="image/*"
+            onChange={preview}
+          ></input>
+        </form>
+      ) : (
+        <div id="previewBox" style={{ background: backgroundColor }}>
+          <div id="previewOuterContainer">
             <div id="previewContainer">
               {clickable ? (
                 <div id="instruction">
@@ -98,28 +98,26 @@ const SelectFile = () => {
               )}
               <img
                 id="chosenPic"
-                style={imgStyles} 
+                style={imgStyles}
                 alt={picName}
                 src={picSrc}
-                onClick={getColor}                
+                onClick={getColor}
+                tabIndex="0"
               />
             </div>
-           </div>
+          </div>
 
-           <div
-            id="selectNameBox"
-            style={fontColor}>
-              {colorData.name}                
-            </div>  
+          <div id="selectNameBox" style={fontColor}>
+            {colorData.name}
+          </div>
         </div>
-      )
-      }
-            <div id="linkContainer2">
-              <LinkToTop fontColor={fontColor} />
-              <Refresh fontColor={fontColor} onClick={() => refresh()} />
-            </div>
+      )}
+      <div id="linkContainer2">
+        <LinkToTop fontColor={fontColor} />
+        <Refresh fontColor={fontColor} onClick={() => refresh()} />
+      </div>
     </div>
   );
-}
+};
 
 export default SelectFile;

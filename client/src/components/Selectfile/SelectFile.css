@@ -2,70 +2,65 @@
   position: relative;
   margin-top: 90px;
   height: 100vh;
-  display:flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
 }
-#selectFile{
-  display:none;
+#selectFile {
+  display: none;
 }
 
-#label{
+#label {
   margin-left: 5vw;
-  font-size: clamp(
-    1.2rem,
-    1vw + 1rem,
-    2.5rem
-  );
+  font-size: clamp(1.2rem, 1vw + 1rem, 2.5rem);
   letter-spacing: 0.05rem;
-  padding: 1.5rem 2rem 1.5rem 2rem; 
-  max-width: 50vw; 
+  padding: 1.5rem 2rem 1.5rem 2rem;
+  max-width: 50vw;
   box-shadow: 0px 0px 15px lightgrey;
-  display:flex;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
 
-label:active{
+label:active {
   box-shadow: none;
-  position:relative;
-  top:5px;
+  position: relative;
+  top: 5px;
 }
 
-#previewOuterContainer{
-  height:100%;
-  
+#previewOuterContainer {
+  height: 100%;
 }
 
-#previewBox{
-  display:flex;
-  flex-direction:row;
+#previewBox {
+  display: flex;
+  flex-direction: row;
 }
 
 #previewContainer {
   margin-top: 4vw;
   display: flex;
   height: auto;
-  justify-content: flex-start;  
-  display:flex;
-  flex-direction:column; 
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
-#instruction{
+#instruction {
   margin-top: 5px;
-  color:white;
+  color: white;
   padding-left: 15px;
   padding-top: 5px;
   padding-bottom: 5px;
   font-weight: bold;
-  font-size:1em;
-  background: rgb(0, 0, 0, 0.1)
+  font-size: 1em;
+  background: rgb(0, 0, 0, 0.1);
 }
 #selectNameBox {
   width: 50vw;
   font-size: 3rem;
-  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;
@@ -85,5 +80,3 @@ label:active{
   gap: 0.5rem;
   align-items: center;
 }
-
-
