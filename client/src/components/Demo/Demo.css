@@ -25,11 +25,7 @@
   top: 10%;
   left: 5%;
   width: 80%;
-  font-size: clamp(
-    1.2rem,
-    1vw + 1rem,
-    2.5rem
-  );
+  font-size: clamp(1.2rem, 1vw + 1rem, 2.5rem);
   letter-spacing: 0.05em;
   color: white;
   font-weight: bold;
@@ -41,7 +37,7 @@
 #demoNameBox {
   width: 50vw;
   font-size: 50px;
-  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
+  font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;
@@ -60,6 +56,4 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
-
 }
-
