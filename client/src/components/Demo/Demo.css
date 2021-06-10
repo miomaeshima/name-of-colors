@@ -9,11 +9,11 @@
 #photoContainer {
   margin-top: 4vw;
   position: relative;
-  width: 60vw;
+  width: 50vw;
 }
 
 #demoImage {
-  width: 80%;
+  width: 100%;
   position: abosolute;
   top: 0;
   left: 0;
@@ -22,10 +22,14 @@
 }
 #demoText {
   position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 80%;
-  font-size: clamp(1.2rem, 1vw + 1rem, 2.5rem);
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  font-size: clamp(
+    1.2rem,
+    1vw + 1rem,
+    2.5rem
+  );
   letter-spacing: 0.05em;
   color: white;
   font-weight: bold;
@@ -37,7 +41,7 @@
 #demoNameBox {
   width: 50vw;
   font-size: 50px;
-  font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+  font-family:'游明朝','Yu Mincho',YuMincho,'Hiragino Mincho Pro',serif;
   display: flex;
   font-size: 50px;
   writing-mode: vertical-rl;
@@ -56,4 +60,6 @@
   flex-direction: column;
   gap: 0.5rem;
   align-items: center;
+
 }
+
