@@ -8,14 +8,15 @@ const Demo = () => {
   const [colorData, setColorData] = useState({});
   const [demoColor, setDemoColor] = useState("lightgoldenrodyellow");
 
-  const placeDemoPage= ()=>{
-    window.location.href = "#demoImage"
-  }
+  const placeDemoPage = () => {
+    window.location.href = "#demoImage";
+  };
 
   const getColor = async (e) => {
     let data = await getRgb(e);
     setColorData(data);
     setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
+
     placeDemoPage();
   };
 
@@ -43,7 +44,6 @@ const Demo = () => {
     <Fragment>
       <div id="demoContainer" style={{ background: demoColor }}>
         <div id="photoContainer">
-        
           <img
             id="demoImage"
             alt="beige stone pebbles"
@@ -52,7 +52,7 @@ const Demo = () => {
             style={clickable ? { cursor: "pointer" } : { cursor: "revert" }}
             tabIndex="0"
           />
-          
+
           {clickable ? (
             <div id="demoText">
               写真をクリックすると、この写真で一番使われている色の名前が分かります。
