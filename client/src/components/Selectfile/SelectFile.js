@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import { getRgb } from "../utility.js";
 import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
 import "./SelectFile.css";
@@ -11,9 +11,15 @@ const SelectFile = () => {
   const [wide, setWide] = useState(true);
   const [backgroundColor, setBackgroundColor] = useState("transparent");
 
+  const placeSelectPage = () => {
+    window.location.href = "#selectYourFile";
+  };
+
   const preview = (e) => {
     e.preventDefault();
     setPreviewPic(e.target.files[0]);
+
+    placeSelectPage();
   };
 
   if (previewPic !== null) {
