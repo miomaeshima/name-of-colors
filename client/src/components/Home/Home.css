@@ -4,31 +4,38 @@ html {
 }
 
 #home {
+  display:flex;
+  flex-wrap: wrap;
   height: 115vh;
-  width: 100vw;
+  width: 100%;
   background: #c1e4e9;
-  padding-top: 200px;
-  padding-left: 250px;
   display: flex;
-}
-
-#intro {
-  width: 400px;
 }
 
 #title {
   font-size: 100px; 
-  margin-bottom: 30px;
-  margin-left: -10px;
+  color:darkslategray;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-#description { 
+#wrapper{
+  display:flex;
+  flex-direction: column;
+  background: green;
+  max-width: 432px;
+  min-width: 332px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+#intro {  
   font-family: "メイリオ", "Meiryo", sans-serif;
   letter-spacing: 0.1rem;
-  line-height: 1.5rem;
-  margin-bottom: 30px;
+  line-height: 1.5rem; 
 }
-
 
 #clickContainer {
   display: flex;
@@ -37,10 +44,8 @@ html {
 
 .button {
   display: block;
-  position: relative;
   width: 300px;
   padding: 0.8em;
-  text-align: center;
   background: rgb(216, 236, 240);
   text-decoration: none;
   border: 1px solid rgb(149, 172, 180);
@@ -53,6 +58,3 @@ html {
   text-decoration: none;
 }
 
-#button1 {
-  margin-right: 2vw;
-}
