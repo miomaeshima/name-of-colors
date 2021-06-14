@@ -42,6 +42,8 @@ const SelectFile = () => {
     let data = await getRgb(e);
     setColorData(data);
     setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
+
+    placeSelectPage();
   };
 
   const refresh = () => {
