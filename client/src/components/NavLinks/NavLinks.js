@@ -2,8 +2,7 @@ import React from "react";
 import { ChevronsUp, RefreshCw, ChevronsDown } from "react-feather";
 import "./NavLinks.css";
 
-const LinkToTop = ({fontColor}) => {
-  console.log(fontColor)
+const LinkToTop = ({ fontColor }) => {
   return (
     <div className="chevrons">
       <ChevronsUp
@@ -21,7 +20,6 @@ const LinkToTop = ({fontColor}) => {
 };
 
 const Refresh = ({ fontColor, onClick }) => {
-  console.log(fontColor)
   return (
     <div className="refresh" tabIndex="0">
       <RefreshCw
@@ -34,8 +32,7 @@ const Refresh = ({ fontColor, onClick }) => {
   );
 };
 
-const Next = ({fontColor}) => {
-  console.log(fontColor)
+const Next = ({ fontColor }) => {
   return (
     <div className="chevrons">
       <ChevronsDown

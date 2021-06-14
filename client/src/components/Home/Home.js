@@ -3,10 +3,10 @@ import "./Home.css";
 function Home() {
   return (
     <div id="home">
-      <div id="wrapper">
+      <div className="wrapper">
         <div id="title">色の名前</div>
       </div>
-      <div id="wrapper">
+      <div className="wrapper">
         <div id="intro">
           例えば、青でもなく空色でもなく「白藍
           しらあい」という、日本の伝統色の名前が知りたいとき使えます。
