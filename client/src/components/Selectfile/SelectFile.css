@@ -10,7 +10,7 @@
   display: none;
 }
 
-#label {
+.label {
   margin-left: 5vw;
   font-size: clamp(1.2rem, 1vw + 1rem, 2.5rem);
   letter-spacing: 0.05rem;
@@ -23,22 +23,22 @@
   justify-content: center;
 }
 
-label:active {
+.label:active {
   box-shadow: none;
   position: relative;
   top: 5px;
 }
 
-#previewOuterContainer {
+.previewOuterContainer {
   height: 100%;
 }
 
-#previewBox {
+.previewBox {
   display: flex;
   flex-direction: row;
 }
 
-#previewContainer {
+.previewContainer {
   margin-top: 4vw;
   display: flex;
   height: auto;
@@ -47,7 +47,7 @@ label:active {
   flex-direction: column;
 }
 
-#instruction {
+.instruction {
   margin-top: 5px;
   color: white;
   padding-left: 15px;

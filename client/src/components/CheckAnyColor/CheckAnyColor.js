@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { getRgb } from "../utility.js";
 import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
-import "./SelectFile.css";
+import "./CheckAnyColor.css";
 
-const SelectFile = () => {
+const CheckAnyColor = () => {
   const [previewPic, setPreviewPic] = useState(null);
   const [picSrc, setPicSrc] = useState(null);
   const [picName, setPicName] = useState("");
@@ -11,15 +11,16 @@ const SelectFile = () => {
   const [wide, setWide] = useState(true);
   const [backgroundColor, setBackgroundColor] = useState("transparent");
 
-  const placeSelectPage = () => {
-    window.location.href = "#selectYourFile";
+  const placeCheckAnyColorPage = () => {
+    window.location.href = "#checkAnyColor";
   };
 
   const preview = (e) => {
     e.preventDefault();
     setPreviewPic(e.target.files[0]);
+    console.log("preview second");
 
-    placeSelectPage();
+    placeCheckAnyColorPage();
   };
 
   if (previewPic !== null) {
@@ -43,7 +44,7 @@ const SelectFile = () => {
     setColorData(data);
     setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
 
-    placeSelectPage();
+    placeCheckAnyColorPage();
   };
 
   const refresh = () => {
@@ -80,15 +81,15 @@ const SelectFile = () => {
   let imgStyles = { ...dimension, ...clickableCursor };
 
   return (
-    <div id="selectYourFile">
+    <div id="checkAnyColor">
       {previewPic === null ? (
         <form name="selectFileForm">
-          <label className="label" htmlFor="selectFile" tabIndex="0">
+          <label className="label" htmlFor="selectFileAnyColor" tabIndex="0">
             ここをクリックして、色を調べたい画像ファイルを選んでください。
           </label>
           <input
             type="file"
-            id="selectFile"
+            id="selectFileAnyColor"
             accept="image/*"
             onChange={preview}
           ></input>
@@ -120,7 +121,7 @@ const SelectFile = () => {
           </div>
         </div>
       )}
-      <div id="linkContainer2">
+      <div id="linkContainer3">
         <LinkToTop fontColor={fontColor} />
         <Refresh fontColor={fontColor} onClick={() => refresh()} />
       </div>
@@ -128,4 +129,4 @@ const SelectFile = () => {
   );
 };
 
-export default SelectFile;
+export default CheckAnyColor;
