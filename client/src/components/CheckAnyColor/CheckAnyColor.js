@@ -18,8 +18,6 @@ const CheckAnyColor = () => {
   const preview = (e) => {
     e.preventDefault();
     setPreviewPic(e.target.files[0]);
-    console.log("preview second");
-
     placeCheckAnyColorPage();
   };
 
@@ -36,6 +34,38 @@ const CheckAnyColor = () => {
           setWide(false);
         }
       };
+    };
+  }
+
+  if (picSrc !== null) {
+    let canvas = document.getElementById("canvas");
+    canvas.width = 400;
+    canvas.height = 400;
+
+    let context = canvas.getContext("2d");
+    context.fillStyle = "lightgray";
+    context.fillRect(0, 0, canvas.width, canvas.height);
+
+    let img = new Image();
+    img.src = picSrc;
+    img.onload = function () {
+      if (wide) {
+        context.drawImage(
+          img,
+          0,
+          0,
+          canvas.width,
+          img.height * (canvas.width / img.width)
+        );
+      } else {
+        context.drawImage(
+          img,
+          0,
+          0,
+          img.width * (canvas.height/img.height),
+          canvas.height
+        );
+      }
     };
   }
 
@@ -63,22 +93,12 @@ const CheckAnyColor = () => {
     fontColor = { color: "black" };
   }
 
-  let clickable = false;
-  if (Object.keys(colorData).length === 0) {
-    clickable = true;
-  }
-
-  let clickableCursor = { cursor: "revert" };
-  if (clickable) {
-    clickableCursor = { cursor: "pointer" };
-  }
-
   let dimension = { marginLeft: "5vw", width: "40vw", height: "auto" };
   if (wide) {
     dimension = { width: "60vw", height: "auto" };
   }
 
-  let imgStyles = { ...dimension, ...clickableCursor };
+  let imgStyles = { ...dimension };
 
   return (
     <div id="checkAnyColor">
@@ -97,22 +117,20 @@ const CheckAnyColor = () => {
       ) : (
         <div className="previewBox" style={{ background: backgroundColor }}>
           <div className="previewOuterContainer">
-            <div className="previewContainer">
-              {clickable ? (
-                <div className="instruction">
-                  写真をクリックすると、この写真で一番使われている色の名前が分かります。
-                </div>
-              ) : (
-                <div></div>
-              )}
-              <img
+            <div className="previewContainer" id="canvasContainer">
+              <div className="instruction">
+                クリックしたところの色の名前が分かります。
+              </div>
+              <canvas id="canvas"></canvas>
+
+              {/* <img
                 id="chosenPic"
                 style={imgStyles}
                 alt={picName}
                 src={picSrc}
                 onClick={getColor}
-                tabIndex="0"
-              />
+                tabIndex="0" 
+              /> */}
             </div>
           </div>
 

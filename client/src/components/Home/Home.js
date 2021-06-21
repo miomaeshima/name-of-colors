@@ -14,11 +14,14 @@ function Home() {
           画像を選んでも、ネット上で送られるのは一番使われている色のRGB値だけ。画像自体はどこにも送られません。
         </div>
         <div id="clickContainer">
-          <a href="#selectYourFile" className="link" id="button1">
-            自分のデバイス内の画像を調べる。
-          </a>
           <a href="#demoImage" className="link">
             デモを見る。
+          </a>
+          <a href="#selectYourFile" className="link" id="button1">
+            自分の画像のメインカラーを調べる。
+          </a>
+          <a href="#checkAnyColor" className="link" id="button2">
+            自分の画像中の好きな色を調べる。
           </a>
         </div>
       </div>
