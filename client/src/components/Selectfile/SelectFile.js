@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getRgb } from "../utility.js";
+import { getMainRgb } from "../utility.js";
 import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
 import "./SelectFile.css";
 
@@ -38,8 +38,8 @@ const SelectFile = () => {
     };
   }
 
-  const getColor = async (e) => {
-    let data = await getRgb(e);
+  const getMainColor = async (e) => {
+    let data = await getMainRgb(e);
     setColorData(data);
     setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
 
@@ -83,8 +83,8 @@ const SelectFile = () => {
     <div id="selectYourFile">
       {previewPic === null ? (
         <form name="selectFileForm">
-          <label id="label" htmlFor="selectFile" tabIndex="0">
-            ここをクリックして、色を調べたい画像ファイルを選んでください。
+          <label className="label" htmlFor="selectFile" tabIndex="0">
+            ここをクリックして、メインカラーを調べたい画像ファイルを選んでください。
           </label>
           <input
             type="file"
@@ -96,7 +96,7 @@ const SelectFile = () => {
       ) : (
         <div id="previewBox" style={{ background: backgroundColor }}>
           <div id="previewOuterContainer">
-            <div id="previewContainer">
+            <div className="previewContainer">
               {clickable ? (
                 <div id="instruction">
                   写真をクリックすると、この写真で一番使われている色の名前が分かります。
@@ -109,7 +109,7 @@ const SelectFile = () => {
                 style={imgStyles}
                 alt={picName}
                 src={picSrc}
-                onClick={getColor}
+                onClick={getMainColor}
                 tabIndex="0"
               />
             </div>

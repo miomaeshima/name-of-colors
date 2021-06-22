@@ -1,0 +1,78 @@
+#checkAnyColor {
+ --canvasContainer-width: 60vw;
+ --canvasContainer-height: 60vw;
+
+    position: relative;
+    margin-top: 90px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #previewBoxAnyColor {
+    margin-top: 3vw;
+    display: flex;
+    flex-direction: row;
+    height: calc(var(--canvasContainer-height) + 10vw); 
+  }
+  
+  #previewContainerAnyColor {
+
+    display: flex;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+  
+#selectFileAnyColor {
+    display: none;
+  }
+  
+#instructionAnyColor{
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 56px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: lightgray;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+#linkContainer3 {
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  #canvasContainer{
+    width: var(--canvasContainer-width);
+    height: var(--canvasContainer-height);
+  }
+
+  #selectNameBoxAnyColor{
+    width: 50vw;
+    font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+    display: flex;
+    font-size: 50px;
+    writing-mode: vertical-rl;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+
+  #colorSample{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+ 
+  }

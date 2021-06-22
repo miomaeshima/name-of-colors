@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from "react";
 import beigestones from "../images/beigestones.jpg";
-import { getRgb } from "../utility.js";
+import { getMainRgb } from "../utility.js";
 import { LinkToTop, Refresh, Next } from "../NavLinks/NavLinks.js";
 import "./Demo.css";
 
@@ -12,8 +12,8 @@ const Demo = () => {
     window.location.href = "#demoImage";
   };
 
-  const getColor = async (e) => {
-    let data = await getRgb(e);
+  const getMainColor = async (e) => {
+    let data = await getMainRgb(e);
     setColorData(data);
     setDemoColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
 
@@ -47,7 +47,7 @@ const Demo = () => {
           <img
             id="demoImage"
             alt="beige stone pebbles"
-            onClick={getColor}
+            onClick={getMainColor}
             src={beigestones}
             style={clickable ? { cursor: "pointer" } : { cursor: "revert" }}
             tabIndex="0"
