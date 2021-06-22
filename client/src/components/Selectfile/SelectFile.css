@@ -1,81 +1,81 @@
 #selectYourFile {
-  position: relative;
-  margin-top: 90px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+    position: relative;
+    margin-top: 90px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 #selectFile {
-  display: none;
+    display: none;
 }
 
 .label {
-  margin-left: 5vw;
-  font-size: 1.5rem;
-  letter-spacing: 0.05rem;
-  padding: 1.5rem;
-  width: fit-content;
+    margin-left: 5vw;
+    font-size: 1.5rem;
+    letter-spacing: 0.05rem;
+    padding: 1.5rem;
+    width: fit-content;
 
-  box-shadow: 0px 0px 15px lightgrey;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+    box-shadow: 0px 0px 15px lightgrey;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .label:active {
-  box-shadow: none;
-  position: relative;
-  top: 5px;
+    box-shadow: none;
+    position: relative;
+    top: 5px;
 }
 
 .previewOuterContainer {
-  height: 100%;
+    height: 100%;
 }
 
 #previewBox {
-  display: flex;
-  flex-direction: row;
+    display: flex;
+    flex-direction: row;
 }
 
 #previewContainer {
-  margin-top: 4vw;
-  display: flex;
-  height: auto;
-  justify-content: flex-start;
-  display: flex;
-  flex-direction: column;
+    margin-top: 4vw;
+    display: flex;
+    height: auto;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
 }
 
 #instruction {
-  color: white;
-  padding-left: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background: lightgray;
+    color: white;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    background: lightgray;
 }
 #selectNameBox {
-  width: 50vw;
-  font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
-  display: flex;
-  font-size: 50px;
-  writing-mode: vertical-rl;
-  align-items: center;
-  justify-content: center;
-  padding-top: 70px;
-  padding-bottom: 70px;
-  position: relative;
+    width: 50vw;
+    font-family: '游明朝', 'Yu Mincho', YuMincho, 'Hiragino Mincho Pro', serif;
+    display: flex;
+    font-size: 50px;
+    writing-mode: vertical-rl;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
 }
 
 #linkContainer2 {
-  position: absolute;
-  bottom: 3%;
-  right: 3%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  align-items: center;
+    position: absolute;
+    bottom: 3%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
 }
