@@ -10,13 +10,14 @@
     justify-content: center;
   }
   #previewBoxAnyColor {
+    margin-top: 3vw;
     display: flex;
     flex-direction: row;
     height: calc(var(--canvasContainer-height) + 10vw); 
   }
   
   #previewContainerAnyColor {
-    margin-top: 4vw;
+
     display: flex;
     justify-content: flex-start;
     display: flex;
@@ -27,6 +28,19 @@
     display: none;
   }
   
+#instructionAnyColor{
+  color: white;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 56px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: lightgray;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
 
 #linkContainer3 {
     position: absolute;
@@ -43,8 +57,22 @@
     height: var(--canvasContainer-height);
   }
 
+  #selectNameBoxAnyColor{
+    width: 50vw;
+    font-family: "游明朝", "Yu Mincho", YuMincho, "Hiragino Mincho Pro", serif;
+    display: flex;
+    font-size: 50px;
+    writing-mode: vertical-rl;
+    align-items: center;
+    justify-content: center;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+
   #colorSample{
-    width: 10vw;
-    height: 10vw;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
+ 
   }

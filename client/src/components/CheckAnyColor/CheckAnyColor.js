@@ -90,7 +90,7 @@ const CheckAnyColor = () => {
       let imageData = context.getImageData(x, y, 1, 1);
       let data = imageData.data;
       getColor(data)
-      colorSample.style.display="none"      
+   
     }); 
   }
   },[picSrc])
@@ -133,17 +133,19 @@ const CheckAnyColor = () => {
           
           <div className="previewOuterContainer">
             <div id="previewContainerAnyColor">
-              <div className="instruction">
+              <div id="instructionAnyColor">
                 クリックしたところの色の名前が分かります。
+          <div id="colorSample"></div>
+                
               </div>
               <div id="canvasContainer">
               <canvas id="canvas"></canvas>
               </div>
+              
             </div>
           </div>
 
-          <div id="selectNameBox" style={fontColor}>
-          <div id="colorSample"></div>
+          <div id="selectNameBoxAnyColor" style={fontColor}>
             {colorData.name}
           </div>
         </div>

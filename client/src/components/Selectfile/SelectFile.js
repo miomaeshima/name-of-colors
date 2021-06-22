@@ -98,7 +98,7 @@ const SelectFile = () => {
           <div id="previewOuterContainer">
             <div className="previewContainer">
               {clickable ? (
-                <div className="instruction">
+                <div id="instruction">
                   写真をクリックすると、この写真で一番使われている色の名前が分かります。
                 </div>
               ) : (
