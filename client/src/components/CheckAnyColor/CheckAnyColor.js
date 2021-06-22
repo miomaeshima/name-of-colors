@@ -129,14 +129,13 @@ const CheckAnyColor = () => {
           ></input>
         </form>
       ) : (
-        <div className="previewBox" style={{ background: backgroundColor }}>
+        <div id="previewBoxAnyColor" style={{ background: backgroundColor }}>
           
           <div className="previewOuterContainer">
-            <div className="previewContainer" id="canvasContainer">
+            <div id="previewContainerAnyColor">
               <div className="instruction">
                 クリックしたところの色の名前が分かります。
               </div>
-              
               <div id="canvasContainer">
               <canvas id="canvas"></canvas>
               </div>

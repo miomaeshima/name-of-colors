@@ -1,4 +1,7 @@
 #checkAnyColor {
+ --canvasContainer-width: 60vw;
+ --canvasContainer-height: 60vw;
+
     position: relative;
     margin-top: 90px;
     height: 100vh;
@@ -6,7 +9,20 @@
     flex-direction: column;
     justify-content: center;
   }
-
+  #previewBoxAnyColor {
+    display: flex;
+    flex-direction: row;
+    height: calc(var(--canvasContainer-height) + 10vw); 
+  }
+  
+  #previewContainerAnyColor {
+    margin-top: 4vw;
+    display: flex;
+    justify-content: flex-start;
+    display: flex;
+    flex-direction: column;
+  }
+  
 #selectFileAnyColor {
     display: none;
   }
@@ -23,8 +39,8 @@
   }
 
   #canvasContainer{
-    width: 60vw;
-    height: 60vw;
+    width: var(--canvasContainer-width);
+    height: var(--canvasContainer-height);
   }
 
   #colorSample{

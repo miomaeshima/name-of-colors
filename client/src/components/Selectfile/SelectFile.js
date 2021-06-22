@@ -94,8 +94,8 @@ const SelectFile = () => {
           ></input>
         </form>
       ) : (
-        <div className="previewBox" style={{ background: backgroundColor }}>
-          <div className="previewOuterContainer">
+        <div id="previewBox" style={{ background: backgroundColor }}>
+          <div id="previewOuterContainer">
             <div className="previewContainer">
               {clickable ? (
                 <div className="instruction">

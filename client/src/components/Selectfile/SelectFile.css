@@ -34,12 +34,12 @@
   height: 100%;
 }
 
-.previewBox {
+#previewBox {
   display: flex;
   flex-direction: row;
 }
 
-.previewContainer {
+#previewContainer {
   margin-top: 4vw;
   display: flex;
   height: auto;
