@@ -6,9 +6,7 @@ import "./CheckAnyColor.css";
 const CheckAnyColor = () => {
   const [previewPic, setPreviewPic] = useState(null);
   const [picSrc, setPicSrc] = useState(null);
-  // const [picName, setPicName] = useState("");
   const [colorData, setColorData] = useState({});
-  // const [wide, setWide] = useState(true);
   const [backgroundColor, setBackgroundColor] = useState("transparent");
 
   const placeCheckAnyColorPage = () => {
@@ -72,7 +70,7 @@ const CheckAnyColor = () => {
       let response = await getRgb(data);
       setColorData(response);
       setBackgroundColor(`rgb(${response.r}, ${response.g}, ${response.b})`);
-  
+      console.log("getColor")  
       placeCheckAnyColorPage();
     };
 
@@ -83,7 +81,7 @@ const CheckAnyColor = () => {
       let data = imageData.data;
  
       colorSample.style.background = `rgb(${data[0]}, ${data[1]}, ${data[2]}`;
-      // setBackgroundColor(`rgb(${data[0]}, ${data[1]}, ${data[2]})`);
+    
     });
 
     canvas.addEventListener("click", (event) => {
