@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { getRgb } from "../utility.js";
 import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
 import "./CheckAnyColor.css";
@@ -6,9 +6,9 @@ import "./CheckAnyColor.css";
 const CheckAnyColor = () => {
   const [previewPic, setPreviewPic] = useState(null);
   const [picSrc, setPicSrc] = useState(null);
-  const [picName, setPicName] = useState("");
+  // const [picName, setPicName] = useState("");
   const [colorData, setColorData] = useState({});
-  const [wide, setWide] = useState(true);
+  // const [wide, setWide] = useState(true);
   const [backgroundColor, setBackgroundColor] = useState("transparent");
 
   const placeCheckAnyColorPage = () => {
@@ -27,29 +27,26 @@ const CheckAnyColor = () => {
     let image = new Image();
     reader.onload = function () {
       setPicSrc(reader.result);
-      setPicName(previewPic.name);
       image.src = reader.result;
-      image.onload = function () {
-        if (image.width < image.height) {
-          setWide(false);
-        }
-      };
     };
   }
 
-  if (picSrc !== null) {
-    let canvas = document.getElementById("canvas");
-    canvas.width = 400;
-    canvas.height = 400;
+  useEffect(()=> {
+    if(picSrc !== null){
+    let canvas = document.getElementById("canvas");    
+    let canvasContainer = document.getElementById("canvasContainer");
+    canvas.width = canvasContainer.clientWidth;
+    canvas.height = canvasContainer.clientHeight;
 
     let context = canvas.getContext("2d");
-    context.fillStyle = "lightgray";
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.fillStyle = "gray";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     let img = new Image();
     img.src = picSrc;
     img.onload = function () {
-      if (wide) {
+      if (img.width>=img.height) {
         context.drawImage(
           img,
           0,
@@ -62,24 +59,38 @@ const CheckAnyColor = () => {
           img,
           0,
           0,
-          img.width * (canvas.height/img.height),
+          img.width * (canvas.height / img.height),
           canvas.height
         );
       }
     };
+    let rgb = document.getElementById("rgb");
+
+    canvas.addEventListener("mousemove", (event) => {
+      let x = event.offsetX;
+      let y = event.offsetY;
+      let imageData = context.getImageData(x, y, 1, 1);
+      let data = imageData.data;
+      rgb.innerHTML = `${data[0]}, ${data[1]}, ${data[2]}`;
+      rgb.style.background = `rgb(${data[0]}, ${data[1]}, ${data[2]}`;
+    });
+
+    canvas.addEventListener("click", (event) => {
+      let x = event.offsetX;
+      let y = event.offsetY;
+      let imageData = context.getImageData(x, y, 1, 1);
+      let data = imageData.data;
+      console.log(data);
+    });
+
+ 
   }
-
-  const getColor = async (e) => {
-    let data = await getRgb(e);
-    setColorData(data);
-    setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
-
-    placeCheckAnyColorPage();
-  };
+  },[picSrc])
 
   const refresh = () => {
     setPreviewPic(null);
     setBackgroundColor("transparent");
+    setPicSrc(null);
     setColorData({});
   };
 
@@ -93,19 +104,14 @@ const CheckAnyColor = () => {
     fontColor = { color: "black" };
   }
 
-  let dimension = { marginLeft: "5vw", width: "40vw", height: "auto" };
-  if (wide) {
-    dimension = { width: "60vw", height: "auto" };
-  }
 
-  let imgStyles = { ...dimension };
 
   return (
     <div id="checkAnyColor">
       {previewPic === null ? (
         <form name="selectFileForm">
           <label className="label" htmlFor="selectFileAnyColor" tabIndex="0">
-            ここをクリックして、色を調べたい画像ファイルを選んでください。
+            ここをクリックして、画像を選んでください。
           </label>
           <input
             type="file"
@@ -121,16 +127,10 @@ const CheckAnyColor = () => {
               <div className="instruction">
                 クリックしたところの色の名前が分かります。
               </div>
+              <div id="canvasContainer">
               <canvas id="canvas"></canvas>
-
-              {/* <img
-                id="chosenPic"
-                style={imgStyles}
-                alt={picName}
-                src={picSrc}
-                onClick={getColor}
-                tabIndex="0" 
-              /> */}
+              </div>
+              <div id="rgb"></div>
             </div>
           </div>
 

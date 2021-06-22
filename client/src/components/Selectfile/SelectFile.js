@@ -84,7 +84,7 @@ const SelectFile = () => {
       {previewPic === null ? (
         <form name="selectFileForm">
           <label className="label" htmlFor="selectFile" tabIndex="0">
-            ここをクリックして、色を調べたい画像ファイルを選んでください。
+            ここをクリックして、メインカラーを調べたい画像ファイルを選んでください。
           </label>
           <input
             type="file"
