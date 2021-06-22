@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getRgb } from "../utility.js";
+import { getMainRgb } from "../utility.js";
 import { LinkToTop, Refresh } from "../NavLinks/NavLinks.js";
 import "./SelectFile.css";
 
@@ -38,8 +38,8 @@ const SelectFile = () => {
     };
   }
 
-  const getColor = async (e) => {
-    let data = await getRgb(e);
+  const getMainColor = async (e) => {
+    let data = await getMainRgb(e);
     setColorData(data);
     setBackgroundColor(`rgb(${data.r}, ${data.g}, ${data.b})`);
 
@@ -109,7 +109,7 @@ const SelectFile = () => {
                 style={imgStyles}
                 alt={picName}
                 src={picSrc}
-                onClick={getColor}
+                onClick={getMainColor}
                 tabIndex="0"
               />
             </div>

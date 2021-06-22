@@ -23,7 +23,12 @@
   }
 
   #canvasContainer{
-    background: blue;
     width: 60vw;
     height: 60vw;
+  }
+
+  #colorSample{
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
   }

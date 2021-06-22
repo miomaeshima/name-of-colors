@@ -31,7 +31,7 @@ const CheckAnyColor = () => {
     };
   }
 
-  useEffect(()=> {
+    useEffect(()=> {
     if(picSrc !== null){
     let canvas = document.getElementById("canvas");    
     let canvasContainer = document.getElementById("canvasContainer");
@@ -40,9 +40,10 @@ const CheckAnyColor = () => {
 
     let context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillStyle = "gray";
+    context.fillStyle = "transparent";
     context.fillRect(0, 0, canvas.width, canvas.height);
 
+  
     let img = new Image();
     img.src = picSrc;
     img.onload = function () {
@@ -64,15 +65,25 @@ const CheckAnyColor = () => {
         );
       }
     };
-    let rgb = document.getElementById("rgb");
+    
+    let colorSample = document.getElementById("colorSample");
+
+    const getColor = async (data) => {
+      let response = await getRgb(data);
+      setColorData(response);
+      setBackgroundColor(`rgb(${response.r}, ${response.g}, ${response.b})`);
+  
+      placeCheckAnyColorPage();
+    };
 
     canvas.addEventListener("mousemove", (event) => {
       let x = event.offsetX;
       let y = event.offsetY;
       let imageData = context.getImageData(x, y, 1, 1);
       let data = imageData.data;
-      rgb.innerHTML = `${data[0]}, ${data[1]}, ${data[2]}`;
-      rgb.style.background = `rgb(${data[0]}, ${data[1]}, ${data[2]}`;
+ 
+      colorSample.style.background = `rgb(${data[0]}, ${data[1]}, ${data[2]}`;
+      // setBackgroundColor(`rgb(${data[0]}, ${data[1]}, ${data[2]})`);
     });
 
     canvas.addEventListener("click", (event) => {
@@ -80,10 +91,9 @@ const CheckAnyColor = () => {
       let y = event.offsetY;
       let imageData = context.getImageData(x, y, 1, 1);
       let data = imageData.data;
-      console.log(data);
-    });
-
- 
+      getColor(data)
+      colorSample.style.display="none"      
+    }); 
   }
   },[picSrc])
 
@@ -122,19 +132,21 @@ const CheckAnyColor = () => {
         </form>
       ) : (
         <div className="previewBox" style={{ background: backgroundColor }}>
+          
           <div className="previewOuterContainer">
             <div className="previewContainer" id="canvasContainer">
               <div className="instruction">
                 クリックしたところの色の名前が分かります。
               </div>
+              
               <div id="canvasContainer">
               <canvas id="canvas"></canvas>
               </div>
-              <div id="rgb"></div>
             </div>
           </div>
 
           <div id="selectNameBox" style={fontColor}>
+          <div id="colorSample"></div>
             {colorData.name}
           </div>
         </div>

@@ -9,7 +9,7 @@ const getName = async (rgbValue) => {
 //function to get the dominant rgb value of an image and then get the name of closest color
 //using the function above
 
-const getRgb = async (e) => {
+const getMainRgb = async (e) => {
   let pic = e.target;
   if (pic.complete) {
     let result = colorThief.getColor(pic);
@@ -21,14 +21,22 @@ const getRgb = async (e) => {
   }
 };
 
-const getRgbOfImg = async (element) => {
-  if (element.complete) {
-    let result = colorThief.getColor(element);
+// const getMainRgbOfImg = async (element) => {
+//   if (element.complete) {
+//     let result = colorThief.getColor(element);
 
-    let rgb = { r: result[0], g: result[1], b: result[2] };
+//     let rgb = { r: result[0], g: result[1], b: result[2] };
+//     let rgbToBeSent = JSON.stringify(rgb);
+//     let color = await getName(rgbToBeSent);
+//     return color;
+//   }
+// };
+
+const getRgb = async (data) => {
+    let rgb = { r: data[0], g: data[1], b: data[2] };
     let rgbToBeSent = JSON.stringify(rgb);
     let color = await getName(rgbToBeSent);
     return color;
-  }
 };
-export { getRgb, getRgbOfImg };
+
+export { getMainRgb, getRgb };
