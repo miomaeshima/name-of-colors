@@ -1,31 +1,31 @@
 .chevrons {
-  position: relative;
-  width: 2rem;
-  height: 2rem;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
 }
 
 .chevrons .icon {
-  pointer-events: none;
+    pointer-events: none;
 }
 
 .invisibleAnchor {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    color: transparent;
 }
 .invisibleAnchor:focus {
-  outline: 1 solid black;
+    outline: 1 solid black;
 }
 
 .refresh {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
 }
